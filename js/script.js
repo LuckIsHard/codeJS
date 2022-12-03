@@ -164,3 +164,100 @@ for (let i=0; i<data.length; i++){
     result[i] = data[data.length-i-1];
 }
 console.log(result);
+
+
+let num = 20;
+
+function showFirstMessage(){
+    num = 10;
+}
+
+showFirstMessage();
+console.log(num);
+
+function calc(a, b) {
+    return (a+b);
+}
+
+console.log(calc(4, 3));
+
+function ret(){
+    let num = 50;
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+
+const logger = function(){
+    console.log('Hello');
+
+}; //обязательно ставить точку с запятой
+
+logger();
+
+const calc = (a, b) => { return a + b };
+
+console.log(calc(4, 3));
+
+const usdCurr = 28;
+
+function convert (amount, curr){
+    console.log(curr*amount);
+}
+
+convert(500, usdCurr);
+
+function sayHello(a){
+    return `Привет, ${a}!`;
+}
+
+function returnNeighboringNumbers(a){
+    let arr = [a-1, a, a+1];
+    return arr;
+}
+
+console.log(returnNeighboringNumbers(5));
+
+
+function getMathResult(x, y) {
+    let arr = [];
+    let z = x;
+    if (typeof(y) === 'number' || y > 0){
+        for (let i = 0; i < y; i++){
+            if (i<y-1){
+                arr[i] = x + '---';
+                x += z;
+            }else arr[i] = x;
+    }
+    }else return x;    
+    return arr.join('');
+}
+
+console.log(getMathResult(3, 10));
+
+
+//как альтернатива на подумать
+function getMathResult(num, times) {
+    if (typeof(times) !== 'number' || times <= 0) {
+        return num;
+    }
+
+    let str = '';
+
+    for (let i = 1; i <= times; i++) {
+        if (i === times) {
+            str += `${num * i}`;
+            // Тут без черточек в конце
+        } else {
+            str += `${num * i}---`;
+            // Это тоже самое, что и
+            // str = str + num * i + "---"
+        }
+    }
+
+    return str;
+}
+
+getMathResult(10, 5);
